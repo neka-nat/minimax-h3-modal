@@ -1,0 +1,29 @@
+[project]
+name = "minimax-h3-modal"
+version = "0.1.0"
+description = "Run the open-weight MiniMax-H3 video+audio model on Modal from the command line"
+readme = "README.md"
+authors = [
+    { name = "neka-nat", email = "nekanat.stock@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "modal>=1.5.5",
+    "pydantic>=2.13.5",
+    "typer>=0.27.2",
+]
+
+[project.scripts]
+h3 = "minimax_h3_modal.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
